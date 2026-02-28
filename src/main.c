@@ -7,6 +7,7 @@ int main() {
         char c = (char)i;
         push_back(&array, &c);
     }
+    
     for(int i = 0 ; i < array.size ;i++){
         pop_back(&array);
         printf("%d capacity, %c number\n", array.capacity, ((char*)array.data)[i]);

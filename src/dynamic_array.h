@@ -20,7 +20,7 @@ typedef enum {
  * @author przdev7
  * @struct d_array
  *
- * @param arr pointer to array (use malloc or calloc to define)
+ * @param data pointer to array (use malloc or calloc to define)
  * @param capacity max elements which array can store
  * @param size current number of elements
  *
@@ -42,10 +42,18 @@ typedef struct {
  * @author przdev7
  * @struct d_array
  * 
- *  @param array array which will store value
- *  @param value 
+ * @param array pointer of your d_array (you can create by using create_darray function)
+ * @param value 
  */
 void push_back(d_array* array, void* value);
+
+/**
+ * @brief Pops last element of array
+ * @author przdev7
+ * @struct d_array
+ * 
+ * @param array pointer of your d_array (you can create by using create_darray function)
+ */
 void pop_back(d_array* array);
 
 /**
@@ -62,6 +70,13 @@ d_array create_darray(DATA_TYPE type);
  * Prevents from memory leak, always use when your array is no longer needed
  */
 void clear_darray(d_array* array);
+
+
+/**
+ * @brief Checks if array is empty.
+ * @param array pointer of your d_array (you can create by using create_darray function)
+ */
+bool is_empty(d_array* array);
 
 
 

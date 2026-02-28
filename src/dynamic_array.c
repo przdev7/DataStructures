@@ -51,6 +51,10 @@ void clear_darray(d_array* array) {
     array->data = NULL;
 }
 
+bool is_empty(d_array* array) {
+    return array->size == 0 ? true : false;
+}
+
 void push_back(d_array* array, void* value) {
     if(array->size >= array->capacity) { 
         array->capacity *= 2; 
