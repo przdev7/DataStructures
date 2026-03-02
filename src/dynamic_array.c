@@ -72,9 +72,14 @@ void push_back(d_array* array, void* value) {
 }
 
 void pop_back(d_array* array) {
-    if(array->size * 2 < array->capacity) {
+    if(is_empty(array)){
+        printf("You cannot pop from empty array");
+        exit(-1);
+    }
+    
+    if((array->size * 2) < array->capacity) {
         array->capacity /= 2;
-        array->data = realloc(array->data, array->capacity * sizeof(int));
+        array->data = realloc(array->data, array->capacity * get_size(array->type));
 
         if(array->data == NULL) {
         printf("allocation failed (pop)");
