@@ -78,6 +78,17 @@ void clear_darray(d_array* array);
  */
 bool is_empty(d_array* array);
 
+/**
+ * @brief Adjust capacity of array perectly to size.
+ * @author przdev7
+ * @param array pointer of your d_array (you can create by using create_darray function)
+ * 
+ * Example:
+ *  if array have 52 elements inside, capacity automatically have been set to 64 elements by push function. 
+ *  But after using fit_size capacity of the array will automatically set to size of elements (52 in our example)
+ */
+void fit_size(d_array* array);
+
 
 
 #endif

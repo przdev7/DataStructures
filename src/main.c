@@ -8,11 +8,10 @@ int main() {
         push_back(&array, &c);
         printf("%d capacity, %c char\n", array.capacity, c);
     }
-    
-    while(array.size >= 0){
-        pop_back(&array);
-     //   printf("%d capacity, %c char\n", array.capacity, ((char*)array.data)[i]);
-    }
+
+    printf("size: %d, capacity: %d\n", array.size, array.capacity);
+    fit_size(&array);
+    printf("size: %d, capacity: %d\n", array.size, array.capacity);
 
     clear_darray(&array);
     return 0;

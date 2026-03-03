@@ -55,6 +55,21 @@ bool is_empty(d_array* array) {
     return array->size == 0 ? true : false;
 }
 
+void fit_size(d_array* array) {
+    if(is_empty(array)){
+        printf("You cannot pop from empty array");
+        exit(-1);
+    }
+
+    array->data = realloc(array->data, array->size * get_size(array->type));
+    if(array->data == NULL) {
+        printf("allocation failed (pop)");
+        exit(-1);
+    }
+    
+    array->capacity = array->size;
+}
+
 void push_back(d_array* array, void* value) {
     if(array->size >= array->capacity) { 
         array->capacity *= 2; 
